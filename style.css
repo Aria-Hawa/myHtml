@@ -1,0 +1,27 @@
+body{
+    margin:0;   /*0可以不加單位*/
+    background-image: url(./images/bg.jpg);
+    font-size: 16px;    /* 通常body不會給font size */
+}
+img{
+    display: block; /* 把img改成"區塊" 這樣就可避免img自有的空白產生 */
+}
+.box{
+    width: 1000px;  /* 這裡我設定他1000px大小 */    /* 快速寫: w1000 */
+    /* 兩個數字時，前面代表上下，後面代表左右 */
+    margin: 0 auto; /* 間距自動偵測(auto)必須搭配寬度(width) */
+}
+.btn{
+    /* btn原本是和box一樣大，現在改為200px */
+    /* width: 200px; */   /*但目前還是不能並排 =>現在是display: block; */
+    float: left;    /* 用float浮動區塊，去覆蓋原本的block */
+}
+h1{
+    font-size: 2rem;    /* re,是抓根元素 */
+}
+h2{
+    font-size: 150%;    /* 等於1.5em */
+}
+p{
+    font-size: 1em; /* <p>預設1em */
+}
