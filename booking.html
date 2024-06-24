@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOKING-基本網站練習</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- class類別以「.」作為開頭 =>可以只寫「 div.box」 -->
+    <!-- banner區 -->
+    <div class="box">
+        <img src="./images/banner.png" alt="一些水果與義大利麵">
+    </div>
+    <!-- 按鈕區 -->
+    <div class="box">
+        <!-- 快速寫法：div.btn*5>a --> <!--btn*5(btn有5個)  >a(每個btn內有超連結)-->
+        <div class="btn"><a href="index.html"><img src="./images/btn_01.png" alt="連結至首頁"></a></div>
+        <div class="btn"><a href="news.html"><img src="./images/btn_02.png" alt="連結至最新消息"></a></div>
+        <div class="btn"><a href="foods.html"><img src="./images/btn_03.png" alt="連結至食譜影片"></a></div>
+        <div class="btn"><a href="map.html"><img src="./images/btn_04.png" alt="連結至交通路線"></a></div>
+        <div class="btn"><a href="booking.html"><img src="./images/btn_05.png" alt="連結至訂位表單"></a></div>
+    </div>
+    <!-- 內容區 -->
+    <div class="box">
+        <!-- 不想要出現卷軸，要自行在iframe上輸入scrolling='no' -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdd39_spT2m-y-XTA6XSRsJ7EX2qstcNIaQjEK-MZiQjO6geA/viewform?embedded=true" width="640" height="1006" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">載入中…</iframe>
+
+    </div>
+    <!-- 頁尾區 -->
+    <div class="footer"><small>Copyright ©田甜甜義式餐廳. design by <a href="https://sites.google.com/view/tien-class6/"
+                target="_blank">新尖兵設計公司</a></small></div>
+
+</body>
+
+</html>
