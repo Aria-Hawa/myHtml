@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAP-基本網站練習</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- class類別以「.」作為開頭 =>可以只寫「 div.box」 -->
+    <!-- banner區 -->
+    <div class="box">
+        <img src="./images/banner.png" alt="一些水果與義大利麵">
+    </div>
+    <!-- 按鈕區 -->
+    <div class="box">
+        <!-- 快速寫法：div.btn*5>a --> <!--btn*5(btn有5個)  >a(每個btn內有超連結)-->
+        <div class="btn"><a href="index.html"><img src="./images/btn_01.png" alt="連結至首頁"></a></div>
+        <div class="btn"><a href="news.html"><img src="./images/btn_02.png" alt="連結至最新消息"></a></div>
+        <div class="btn"><a href="foods.html"><img src="./images/btn_03.png" alt="連結至食譜影片"></a></div>
+        <div class="btn"><a href="map.html"><img src="./images/btn_04.png" alt="連結至交通路線"></a></div>
+        <div class="btn"><a href="booking.html"><img src="./images/btn_05.png" alt="連結至訂位表單"></a></div>
+    </div>
+    <!-- 內容區 -->
+    <div class="box">
+        <div class="col">
+            <h1>田甜甜義式餐廳</h1>
+            <address>
+                <p>地址：100台北市中正區濟南路一段321號</p>
+                <p>訂位專線：0233222777</p>
+                <p>營業時間：11:00~22:00</p>
+            </address>
+        </div>
+        <div class="col">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1519.8231715352426!2d121.52518407970025!3d25.041910287281453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a970a11a84ad%3A0x58e05f2528812097!2z5ZyL56uL6Ie65YyX5ZWG5qWt5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1719214492712!5m2!1szh-TW!2stw" width="446" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+
+    </div>
+    <!-- 頁尾區 -->
+    <div class="footer"><small>Copyright ©田甜甜義式餐廳. design by <a href="https://sites.google.com/view/tien-class6/"
+                target="_blank">新尖兵設計公司</a></small></div>
+
+</body>
+
+</html>
