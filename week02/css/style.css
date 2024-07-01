@@ -1,0 +1,144 @@
+@charset "UTF-8";
+/*UTF-8設定必定要在第一行(line 1)*/
+
+/* 重置所有標籤的樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* RWD不累加內距padding與邊框border */
+}
+
+/* 重置字體 */
+body {
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    background-color: rgb(184, 222, 255);
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    /* 已知此網頁的a都"不是文字超連結"，因此先把a設定為區塊 */
+    display: block;
+    text-decoration: none;
+}
+
+/* 頁首區 */
+#topbar {
+    display: flex;
+    /* display: flex;的預設主軸為水平 */
+    justify-content: space-between;
+    /* 主軸均分貼齊頭尾 */
+    align-items: center;
+    /* 水平方向要置中center */
+    padding: 30px;
+}
+
+.logo {
+    width: 65px;
+    /* 可以寫死，logo以寬度為準 */
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    /* 主軸換方向為垂直 */
+    /* 現在要副軸(水平)靠end對齊 */
+    align-items: flex-end;
+
+}
+
+.navigation .icon {
+    display: flex;
+}
+
+.navigation .menu {
+    display: flex;
+    margin: 15px;
+}
+
+.navigation .icon a {
+    /* id用[#]，class用[.]，標籤不用另外加，中間都用空白隔開 */
+    /* 前面已經把a設定為區塊，所以現在可以給寬高設定 */
+    width: 35px;
+    height: 35px;
+    /* border: solid 1px; */
+    /* 先弄個邊框暫時出來看看 */
+    transition: .5s ease-in-out;
+    /* transition => 轉場效果，可以設定屬性、持續時間、計時功能、延遲...功能 */
+
+}
+
+.icon-fb {
+    /* 只有svg檔案會自動等比例縮放，其他圖檔是原始尺寸，要再另外改變尺寸 */
+    /* 若之前沒有設定.navigation .icon a的寬高時，就要在此class上設定寬高，因為background本身無尺寸概念 */
+    /* width: 35px;
+    height: 35px; */
+    background-image: url(../images/icon-fb.svg);
+    margin-left: 10px;
+    /* 給個間距出來 */
+}
+
+.icon-fb:hover {
+    /* :hover =>游標徘徊時的變化設定 */
+    /* hover不能和前面的tag; class; id....中間空格，css會誤判這是下一層內容 */
+    background-image: url(../images/icon-fb-hover.svg);
+}
+
+.icon-ig {
+    background-image: url(../images/icon-ig.svg);
+    margin-left: 10px;
+    /* 給個間距出來 */
+}
+
+.icon-ig:hover {
+    background-image: url(../images/icon-ig-hover.svg);
+}
+
+.icon-line {
+    background-image: url(../images/icon-line.svg);
+    margin-left: 10px;
+    /* 給個間距出來 */
+}
+
+.icon-line:hover {
+    background-image: url(../images/icon-line-hover.svg);
+}
+
+.navigation .menu a {
+    color: #444;
+    margin: 0 10px;
+    border-bottom: solid 2px transparent;
+}
+
+.navigation .menu a:hover {
+    border-bottom: solid 2px #444;
+    transition: all .25s ease-in;
+    /* 若只有打上述，轉場效果會卡卡的(2px線條正在推空間出來) */
+    /* 因此在.menu a時先設定好2px的線條空間出來(給透明值) */
+}
