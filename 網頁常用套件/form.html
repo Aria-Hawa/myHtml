@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本表單</title>
+    <!-- style定義 --> <!-- 就不用每行手key換行 -->
+    <style>
+        #form-member-edit>* {
+            display: block;
+            margin: 10px;
+        }
+
+        #form-member-edit label {
+            line-height: 1;
+            margin-top: 25px;
+        }
+
+        #form-member-edit div {
+            margin-top: 50px;
+        }
+
+        #username {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 搜尋表單 -->
+    <!-- 標題 欄位 送出 -->
+    !!必要留檔，未來表單的範例檔案!!
+    <hr>
+    <form action="" method="post" name="form-search-product" id="form-search-product" title="產品搜尋表單">
+        <label for="">產品搜尋表單 : </label>
+        <input type="search" name="input-search" id="input-search" title="產品搜尋欄位，請輸入產品關鍵字" placeholder="請輸入產品關鍵字">
+        <input type="submit" value="送出(value可自訂名稱)" name="btn-search" id="btn-search" title="產品搜尋按鈕">
+    </form>
+    <hr>
+    <!-- 會員資料修改 -->
+    <header> <!-- 表頭區 -->
+        <h2>會員資料修改</h2>
+        <small>「*」為必填</small>
+    </header>
+    <form action="" method="post" name="form-member-edit" id="form-member-edit" title="會員資料修改表單">
+        <label for="username">*姓名：<small>(屬性：required(必填)/ autocomplete(自動抓紀錄)/ autofocus(自動聚焦))</small></label>
+        <!-- 星號要自己寫，系統不會自動代入 -->
+        <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入姓名" required autocomplete
+            autofocus>
+        <!-- 屬性：required(必填)/ autocomplete(自動抓紀錄)/ autofocus(自動聚焦) -->
+
+        <label for="account">帳號：<small>(屬性：disabled(禁用) =>推薦，易用性好)</small></label>
+        <input type="text" name="account" id="account" title="帳號欄位" value="abc123" disabled>
+        <!-- 屬性：disabled(禁用) =>推薦使用，易用性好 -->
+
+        <label for="idnumber">身分證字號：<small>(屬性：readonly(只讀) =>不推薦使用)</small></label>
+        <input type="text" name="idnumber" id="idnumber" title="身分證字號欄位" value="A123456789" readonly>
+        <!-- 屬性：readonly(只讀) =>不推薦使用，樣式不意辨識 -->
+
+        <label for="tel">電話：</label>
+        <input type="tel" name="tel" id="tel" title="電話欄位" placeholder="請輸入聯絡電話">
+
+        <label for="mobile">手機號碼：<small>(屬性：maxlength(限制字數))</small></label>
+        <input type="tel" name="mobile" id="mobile" title="手機號碼欄位" placeholder="共10碼" maxlength="10">
+        <!-- 屬性：maxlength(限制字數) -->
+
+        <label for="email">*Email：</label>
+        <input type="email" name="email" id="email" title="email欄位" placeholder="請輸入email" required>
+
+        <label for="password">修改密碼：</label>
+        <input type="password" name="password" id="password" title="密碼欄位" placeholder="請輸入密碼">
+        <!-- 顯示密碼的功能(眼睛)要新增一個btn-icon在欄位後面，然後用js變更type屬性 -->
+
+        <label for="password">確認密碼：</label>
+        <input type="password" name="password" id="password-1" title="密碼欄位" placeholder="再次確認密碼">
+        <!-- id命名不能重複 -->
+
+        <label for="birthday">生日</label>
+        <input type="date" name="birthday" id="birthday" title="生日欄位">
+
+        <label for="file">上傳檔案：<small>(僅可上傳2Mb圖檔：jpg、gif、png)</small></label>
+        <input type="file" name="file" id="file" title="上傳檔案按鈕" multiple>
+        <!-- 預設只能上傳一個檔案 --> <!-- 檔案大小、類型一定要限制，用js判斷 -->
+        <!-- 屬性：multiple(可輸入多個資料) -->
+
+        <label for="gender">性別：</label>
+        <select name="gender" id="gender" title="性別選項">
+            <option value="">請選擇</option> <!-- 此行要自己新增且不給值(空值)，讓使用者可以看到[請選擇]字眼 -->
+            <option value="生理男">生理男</option>
+            <option value="生理女">生理女</option>
+        </select>
+        <!-- 下拉選單無法使用required，只能用js判斷 -->
+
+        <label for="other">其他類別：</label>
+        <select name="other" id="other" title="類別選項">
+            <option value="">請選擇</option> <!-- 此行要自己新增且不給值(空值)，讓使用者可以看到[請選擇]字眼 -->
+            <optgroup label="分類一">
+                <option value="選項1">選項1</option>
+                <option value="選項2">選項2</option>
+                <option value="選項3">選項3</option>
+            </optgroup>
+            <optgroup label="分類二">
+                <option value="選項1">選項1</option>
+                <option value="選項2">選項2</option>
+                <option value="選項3">選項3</option>
+            </optgroup>
+        </select>
+        <!-- optgroup選項分類需搭配label定義分類名稱 -->
+
+        <!-- 大欄位包起來多個單選 -->
+        <fieldset>
+            <!-- 大欄位的名稱 -->
+            <legend>會員類別</legend>
+
+            <!-- 順序input先寫，再給lable(單選項的名稱) -->
+            <!-- input radio後面必須代值(value)，才能回傳給資料庫 -->
+            <!-- 同一大欄位內的單選的name要一樣，這樣才是做name這個分類的單選 -->
+            <input type="radio" name="vip" id="vip01" value="金卡會員">
+            <label for="vip01">金卡會員</label>
+
+            <input type="radio" name="vip" id="vip02" value="銀卡會員">
+            <label for="vip02">銀卡會員</label>
+
+            <input type="radio" name="vip" id="vip03" value="銅卡會員">
+            <label for="vip03">銅卡會員</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>當name不同時的錯誤示範</legend>
+            <!-- 同一大欄位內的單選的name要一樣，這樣才是做name這個分類的單選 -->
+            <input type="radio" name="aa1" id="aa1" value="錯誤示範1">
+            <label for="aa1">錯誤示範1</label>
+            <input type="radio" name="aa2" id="aa2" value="錯誤示範2">
+            <label for="aa2">錯誤示範2</label>
+            <input type="radio" name="aa3" id="aa3" value="錯誤示範3">
+            <label for="aa3">錯誤示範3</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>訂閱內容：</legend>
+            <input type="checkbox" name="order" id="order01" value="國際">
+            <label for="order01">國際</label>
+
+            <input type="checkbox" name="order" id="order02" value="社會">
+            <label for="order02">社會</label>
+            
+            <input type="checkbox" name="order" id="order03" value="寵物">
+            <label for="order03">寵物</label>
+            
+            <input type="checkbox" name="order" id="order04" value="政治">
+            <label for="order04">政治</label>
+
+            <input type="checkbox" name="order" id="order05" value="娛樂">
+            <label for="order05">娛樂</label>
+        </fieldset>
+
+
+        <!-- 以下兩個input包一個爸爸div，這樣他們兩個就可以併排了 -->
+        <div>
+            <input type="submit" name="btn_submit--member" id="btn_submit--member" title="會員資料修改送出按鈕" value="送出~~~">
+            <input type="reset" name="btn_reset--member" id="btn_reset--member" title="會員資料修改重設按鈕">
+            <!-- btn不給value沒關係，瀏覽器預設就會有btn字眼 -->
+        </div>
+
+    </form>
+
+</body>
+
+</html>
