@@ -1,5 +1,9 @@
-@charset "UTF-8";
-/*UTF-8設定必定要在第一行(line 1)*/
+@charset "UTF-8";   /*UTF-8設定必定要在第一行(line 1)*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');    /* google fonts必定放在line 2 */
+@font-face {
+    font-family: "Greenwashing\ Machine\ Bold";
+    src: url(../webfonts/Greenwashing\ Machine\ Bold.otf);
+}
 
 /* 重置所有標籤的樣式 */
 * {
@@ -14,7 +18,6 @@ body {
     font-family: sans-serif;
     font-size: 100%;
     line-height: 1.5;
-    background-color: rgb(184, 222, 255);
 }
 
 /* 重置標題 */
@@ -144,9 +147,6 @@ a {
     background-image: url(../images/icon-line-hover.svg);
 }
 
-
-
-
 .navigation .menu a {
     color: #444;
     margin: 0 10px;
@@ -168,4 +168,89 @@ a {
 
 .navigation .menu li:last-child {
     border-right: none;
+}
+
+/* 每頁公用區 */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.title{
+    /* border: solid 1px red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title h2{
+    /* font-family的設定在line 3~6 */
+    font-family: "Greenwashing\ Machine\ Bold", sans-serif;   /* 要在手加一個備用預設字體(sans=serif) */
+    font-size: 2.5rem;
+    letter-spacing: 1rem;
+    border-bottom: solid 2px;
+    padding-left: 10px;
+}
+
+.title h3{
+    /* 使用google font字體(拆字下載，容量小)設定必定要放在line 2 */
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;  /* 光學尺寸修正(新設定) */
+    font-weight: 400;
+    font-style: normal;     /* 斜體設定 */
+    font-size: 1.5rem;
+    line-height: 3rem;
+}
+
+/* CONTACT區 */
+#contact {
+    /* 設定背景 */
+    background-image: url(../images/bg_contact.jpg);
+    background-repeat: no-repeat;  /* 此次狀況下，這個設定上可有可無 */
+    background-size: cover;     /* 版面設定 */
+    background-position: center center;     /* 第一個值x軸，第二個值y軸。設定背景置中 */
+    background-attachment: fixed;       /* 釘住背景，滾輪滾動但背景不會動 */
+
+}
+
+#form-contact {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */    /* 這邊可以由section爸爸控制就好，爸爸還順便控制好width */
+    width: 35%;
+}
+
+#form-contact label {
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 18px;
+    line-height: 2;
+    margin-top: 18px;
+}
+
+#form-contact input, #form-contact textarea {
+    padding: 10px;
+    color: rgb(142, 7, 79);
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 600;
+    /* border: 2px white; */
+    /* border-radius: 8px; */
+}
+
+/* 改替代文字 */
+#form-contact input::placeholder, #form-contact textarea::placeholder {
+    color: rgb(163, 154, 127);
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#form-contact small {
+    color: rgb(86, 78, 52);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
 }
