@@ -258,6 +258,8 @@ section {
     /* font-family的設定在line 3~6 */
     font-family: "Greenwashing\ Machine\ Bold", sans-serif;
     /* 要在手加一個備用預設字體(sans=serif) */
+    font-family: "Greenwashing\ Machine\ Bold", sans-serif;
+    /* 要在手加一個備用預設字體(sans=serif) */
     font-size: 2.5rem;
     letter-spacing: 1rem;
     border-bottom: solid 2px;
@@ -269,7 +271,11 @@ section {
     font-family: "Noto Sans TC", sans-serif;
     font-optical-sizing: auto;
     /* 光學尺寸修正(新設定) */
+    font-optical-sizing: auto;
+    /* 光學尺寸修正(新設定) */
     font-weight: 400;
+    font-style: normal;
+    /* 斜體設定 */
     font-style: normal;
     /* 斜體設定 */
     font-size: 1.5rem;
