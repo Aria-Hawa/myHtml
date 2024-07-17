@@ -1,12 +1,12 @@
-@charset "UTF-8";
-/*UTF-8設定必定要在第一行(line 1)*/
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
-
-/* google fonts必定放在line 2 */
-@font-face {
+@charset "UTF-8";    /* UTF-8設定必定要在第一行(line 1) */
+@font-face {   /* google fonts必定放在line 2 */
     font-family: "Greenwashing\ Machine\ Bold";
     src: url(../webfonts/Greenwashing\ Machine\ Bold.otf);
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+
 
 /* 重置所有標籤的樣式 */
 * {
@@ -59,7 +59,7 @@ a {
 
 /* 按鈕區 */
 .btn-s {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--light);
     width: auto !important;
     /* important權重第一優先，正常都不會用 */
     height: 35px;
@@ -69,7 +69,7 @@ a {
 }
 
 .btn-s:hover {
-    color: white;
+    color: var(--light);
     background-color: black;
     transition: .5s ease-in-out;
 }
@@ -77,7 +77,8 @@ a {
 
 /* 頁首區 */
 #topbar {
-    z-index: 999;       /* 圖層至高概念 */
+    z-index: 999;
+    /* 圖層至高概念 */
     /* position權重>display */
     position: fixed;
     /* 固定地位不會隨卷軸移動，且預設抓內容尺寸 */
@@ -161,20 +162,20 @@ a {
 }
 
 .navigation .menu a {
-    color: #444;
+    color: var(--deep);
     margin: 0 10px;
     border-bottom: solid 2px transparent;
 }
 
 .navigation .menu a:hover {
-    border-bottom: solid 2px #444;
+    border-bottom: solid 2px var(--deep);
     transition: all .25s ease-in;
     /* 若只有打上述，轉場效果會卡卡的(2px線條正在推空間出來) */
     /* 因此在.menu a時先設定好2px的線條空間出來(給透明值) */
 }
 
 .navigation .menu li {
-    border-right: solid 1px #444;
+    border-right: solid 1px var(--deep);
     /* 新增右邊線 */
     line-height: 1;
 }
@@ -184,6 +185,61 @@ a {
 }
 
 /* 每頁公用區 */
+/* 變數 */
+/* 宣告變數 :root{} */
+:root{
+    /* 定義變數名稱 --名稱: ; */
+
+    /* 灰階 */
+    --deep: #444;
+    --grey: #999;
+    --light: #f1f1f1;
+
+    /* 背景 */
+    --primry: #f2edf0;
+    --secondary: #e6ece5;
+    --tertiary: #ecf0f4;
+
+    /* 輔助 */
+    --lesser-1: #f3e4e4;
+    --lesser-2: #efdbdb;
+    --leeser-3: #cdaaab;
+    --lesser-4: #8f6b6d;
+    --lesser-5: #b06468;
+
+    /* 透明 */
+    --alpha-w-30: rgba(255,255,255, .3);
+    --alpha-w-60: rgba(255,255,255, .6);
+    --alpha-b-30: rgba(0, 0, 0, .3);
+    --alpha-g-50: rgba(68, 68, 68, 0.5);
+    --alpha-g-70: rgba(68, 68, 68, 0.7);
+    --alpha-r-60: rgba(220, 185 ,185, .6);
+
+    /* 漸層 */
+    --gradient-w-a: rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.5);
+    
+    /* 陰影 */
+    --box-shadow-g: 2px 2px 3px rgba(0,0,0, .3),
+        inset -1px -1px rgba(255, 255, 255, .8)
+    /* 呼叫變數方式 var() */
+}
+
+
+
+/* 玻璃擬態 */
+#form-contact input,
+#form-contact textarea {
+    border-radius: 10px;
+    border: solid 1px var(--deep);
+    background-color: transparent;
+    /* 取消input...的預設背景色 */
+    background-image: linear-gradient(-30deg, var(--gradient-w-a));
+    box-shadow: var(--box-shadow-g);
+    /* filter: drop-shadow(2px 2px 4px var(--alpha-b-30); */
+    /* 練習濾鏡的陰影 */
+    backdrop-filter: blur(1px);
+}
+
 section {
     display: flex;
     flex-direction: column;
@@ -193,11 +249,9 @@ section {
 }
 
 .title {
-    /* border: solid 1px red; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
 }
 
 .title h2 {
@@ -225,11 +279,32 @@ section {
 .box_list {
     display: flex;
     width: 80%;
+    max-width: 1400px;
+    /* 通常搭配相對單位，設定絕對單位 */
 }
 
 .box_list .item {
     flex: 1;
     margin: 0px 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 3px 3px 10px var(--alpha-b-30);
+}
+
+.box_list figure {
+    /* width因為display-block關係會自動延展，所以不用特別寫 */
+    height: 40vh;
+}
+
+.box_list img {
+    object-fit: cover;
+    /* width: 100% 上面重置圖片時已經設定了 */
+    height: 100%;
+    /* 當初重置圖片是設定auto現在要設定100% */
+}
+
+.box_list .content {
+    padding: 10px 15px;
 }
 
 .box_list h1 {
@@ -239,10 +314,127 @@ section {
 
 .box_list p {
     font-size: .9rem;
-    /*text-align: justify;*/    /* 齊行比較適合用在中文上 */
+    /*text-align: justify;*/
+    /* 齊行比較適合用在中文上 */
 }
 
 /* NEWS區 */
+#news {
+    background-color: var(--primry);
+}
+
+#news .content {
+    background-color: var(--alpha-w-60);
+}
+
+#news .content:hover {
+    background-color: var(--light);
+    transition: all .3s ease-in-out;
+}
+
+#news p {
+    /* 多行省略 */
+    /* 之後直接複製下面5行語法 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 若有設定line-clamp時，瀏覽器會自動加入，文字溢出時會自動出現省略號 */
+    display: -webkit-box;
+    /* 彈性布局 */
+    -webkit-box-orient: vertical;
+    /* 定義box垂直布局 */
+    -webkit-line-clamp: 5;
+    /* 限制行數 */
+}
+
+/* SERVICE區 */
+#service {
+    background-color: var(--secondary);
+}
+
+#service p {
+    /* 單行省略 */
+    /* 之後直接複製下面5行語法 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap ;
+}
+
+#service .item {
+    height: 65vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    /* 若flex方向改為垂直，則a的寬度就不用再補設定寬度100% */
+    align-items: flex-end;
+}
+
+#service a {
+    width: 100%;    /* 因item後來設定flex，被影響寬度，因此補寫寬度 */
+    color:var(--light);
+    background-color: var(--alpha-g-50);
+}
+
+#service a:hover {
+    background-color: var(--alpha-g-70);
+    transition: all .3s ease-out;
+}
+
+.svc-1 {
+    background-image: url(../images/pt_svc1.jpg);
+}
+
+.svc-2 {
+    background-image: url(../images/pt_svc2.jpg);
+}
+
+.svc-3 {
+    background-image: url(../images/pt_svc3.jpg);
+}
+
+.svc-4 {
+    background-image: url(../images/pt_svc4.jpg);
+}
+
+/* VIDEO區 */
+#video {
+    background-color: var(--tertiary);
+}
+
+.video {
+    width: 65%;
+    max-width: 1050px;
+
+
+}
+
+video {
+    width: 100%;
+    
+}
+
+/* ABOUT區 */
+#about .about-content {
+    width: 50%;
+    height: 100%;   /* 抓section的設定 */
+    background-color: var(--alpha-r-60);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about p {
+    width: 85%;
+    height: 65vh;
+    overflow: auto;
+    padding-top: 30px;
+}
+
+
+
+
+
+
 
 
 /* CONTACT區 */
@@ -276,38 +468,45 @@ section {
     font-family: "Noto Sans TC", sans-serif;
     font-size: 18px;
     line-height: 2;
+    margin-top: 18px;
 }
 
 #form-contact input,
 #form-contact textarea {
+    font-family: "Noto Sans TC", sans-serif;
     padding: 10px;
-    color: rgb(142, 7, 79);
+    color: var(--lesser-5);
     letter-spacing: 2px;
     font-size: 16px;
     font-weight: 600;
-    /* border: 2px white; */
-    /* border-radius: 8px; */
 }
 
 /* 改替代文字 */
 #form-contact input::placeholder,
 #form-contact textarea::placeholder {
-    color: rgb(163, 154, 127);
+    color: var(--lesser-4);
     letter-spacing: 2px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
 }
 
 #form-contact small {
-    color: rgb(86, 78, 52);
-    font-size: 14px;
+    color: var(--deep);
+    font-size: 12px;
     font-weight: 500;
     letter-spacing: 2px;
 }
 
 #btn-contact-submit {
-    /* 玻璃擬態效果 */
-    background-image: linear-gradient(150dgb);
+    border-radius: 10px;
+    border: solid 1px var(--deep);
+    background-color: transparent;
+    /* 取消input...的預設背景色 */
+    background-image: linear-gradient(-30deg, var(--gradient-w-a));
+    box-shadow: var(--box-shadow-g);
+    /* filter: drop-shadow(2px 2px 4px var(--alpha-b-30); */
+    /* 練習濾鏡的陰影 */
+    backdrop-filter: blur(1px);
 }
 
 #btn-contact-submit {
@@ -331,13 +530,13 @@ section {
     /* opacity: 1; */
     /* 透明度 */
     /* 取消button預設值 */
-    border: 1px solid rgb(86, 78, 52);
+    border: 1px solid var(--lesser-4);
 }
 
 #btn-contact-submit span {
     font-size: 18px;
     font-weight: 500;
-    color: rgb(142, 7, 79);
+    color: var(--lesser-5);
     letter-spacing: 1rem;
 }
 
