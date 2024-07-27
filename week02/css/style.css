@@ -100,6 +100,10 @@ a {
     /* 可以寫死，logo以寬度為準 */
 }
 
+.logo img {
+    filter: drop-shadow(5px 2px  var(--leeser-3));
+}
+
 .navigation {
     display: flex;
     flex-direction: column;
@@ -116,12 +120,6 @@ a {
     display: flex;
     padding: 8px 0px;
     margin: 15px;
-    border-radius: 10px;
-    border: solid 1px var(--gradient-w-a);
-    background-color: transparent;
-    background-image: linear-gradient(-30deg, var(--gradient-w-a));
-    box-shadow: var(--box-shadow-g);
-    backdrop-filter: blur(1px);
 }
 
 .navigation .icon a {
@@ -226,25 +224,24 @@ a {
     --gradient-w-a: rgba(255, 255, 255, 0.15), rgba(220, 185 ,185, .5);
     
     /* 陰影 */
-    --box-shadow-g: 2px 2px 3px rgba(0,0,0, .3),
+    --box-shadow-g: 2px 2px 3px rgba(0,0,0, .45),
         inset -1px -1px rgba(255, 255, 255, .8)
     /* 呼叫變數方式 var() */
 }
 
 
 
-/* 玻璃擬態 */
+/* 玻璃擬態共用 */
 #form-contact input,
-#form-contact textarea {
+#form-contact textarea,
+.navigation .menu {
     border-radius: 10px;
-    border: solid 1px var(--deep);
-    background-color: transparent;
-    /* 取消input...的預設背景色 */
     background-image: linear-gradient(-30deg, var(--gradient-w-a));
     box-shadow: var(--box-shadow-g);
     /* filter: drop-shadow(2px 2px 4px var(--alpha-b-30); */
     /* 練習濾鏡的陰影 */
     backdrop-filter: blur(1px);
+
 }
 
 section {
@@ -446,10 +443,6 @@ video {
 
 
 
-
-
-
-
 /* CONTACT區 */
 #contact {
     /* 設定背景 */
@@ -472,26 +465,39 @@ video {
 #form-contact {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    align-items: center;
     /* 這邊可以由section爸爸控制就好，爸爸還順便控制好width */
     width: 35%;
+    font-family: "Noto Sans TC", sans-serif;
 }
+
+
 
 #form-contact label {
-    font-family: "Noto Sans TC", sans-serif;
-    font-size: 18px;
+    /* font-family: "Noto Sans TC", sans-serif; */
+    font-size: 14px;
     line-height: 2;
-    margin-top: 18px;
+    margin-top: 15px;
+    width: 100%;
 }
 
-#form-contact input,
-#form-contact textarea {
-    font-family: "Noto Sans TC", sans-serif;
+#form-contact input, #form-contact textarea {
+    width: 100%;
+    /* font-family: "Noto Sans TC", sans-serif; */
     padding: 10px;
     color: var(--lesser-5);
     letter-spacing: 2px;
     font-size: 16px;
     font-weight: 600;
+        
+    /* 取消input...的預設值 */
+    background-color: transparent;
+    border: none;
+}
+
+#form-contact input:focus, #form-contact textarea:focus{
+/* 修改focus的預設樣式 */
+outline: 2px solid var(--leeser-3);
 }
 
 /* 改替代文字 */
@@ -504,56 +510,47 @@ video {
 }
 
 #form-contact small {
+    width: 100%;
     color: var(--deep);
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 2px;
+    margin: 10px 0px;
 }
 
+/* 動態按鈕套件 */
 #btn-contact-submit {
-    border-radius: 10px;
-    border: solid 1px var(--deep);
-    background-color: transparent;
-    /* 取消input...的預設背景色 */
-    background-image: linear-gradient(-30deg, var(--gradient-w-a));
-    box-shadow: var(--box-shadow-g);
-    /* filter: drop-shadow(2px 2px 4px var(--alpha-b-30); */
-    /* 練習濾鏡的陰影 */
-    backdrop-filter: blur(1px);
-}
-
-#btn-contact-submit {
-    /* position: relative; */
-    /* 子層若沒有absolute，父層就不用relative */
+    /* position: relative; */     /* 子層若沒有absolute，父層就不用relative */
     /* outline: none; */
-    /* text-decoration: none; */
-    /* 文字底線 */
+    /* text-decoration: none; */   /* 文字底線 */
 
     border-radius: 99px;
     /* 定義起始位置 */
     display: flex;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
     /* 游標模式 */
     cursor: pointer;
-    /* text-transform: uppercase */
-    /* 設定字母大寫 */
+    /* text-transform: uppercase */   /* 設定字母大寫 */
     height: 60px;
     width: 210px;
-    /* opacity: 1; */
-    /* 透明度 */
+    /* opacity: 1; */    /* 透明度 */
     /* 取消button預設值 */
-    border: 1px solid var(--lesser-4);
+    background-color: transparent;
+    border: 2px solid var(--leeser-3);
+
+    /* 加入玻璃擬態 */
+    background-image: linear-gradient(-30deg, var(--gradient-w-a));
+    box-shadow: var(--box-shadow-g);
+    backdrop-filter: blur(1px);
 }
 
 #btn-contact-submit span {
-    font-size: 18px;
-    font-weight: 500;
     color: var(--lesser-5);
-    letter-spacing: 1rem;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
 }
-
-
 #btn-contact-submit:hover {
     animation: rotate 0.7s ease-in-out both;
 }
@@ -561,6 +558,42 @@ video {
 #btn-contact-submit:hover span {
     animation: storm 0.7s ease-in-out both;
     animation-delay: 0.06s;
+}
+
+
+@keyframes rotate {
+    0% {
+transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    25% {
+transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+    50% {
+transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+    75% {
+transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+    100% {
+transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}
+@keyframes storm {
+    0% {
+transform: translate3d(0, 0, 0) translateZ(0);
+    }
+    25% {
+transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+    50% {
+transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+    75% {
+transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+    100% {
+transform: translate3d(0, 0, 0) translateZ(0);
+    }
 }
 
 /* 裝飾花 */
