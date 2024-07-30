@@ -1,10 +1,11 @@
 @charset "UTF-8";    /* UTF-8設定必定要在第一行(line 1) */
-@font-face {   /* google fonts必定放在line 2 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+/* google fonts必定放在line 2 */
+@font-face {
     font-family: "Greenwashing\ Machine\ Bold";
     src: url(../webfonts/Greenwashing\ Machine\ Bold.otf);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 
 
 
