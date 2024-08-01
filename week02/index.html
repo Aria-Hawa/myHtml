@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aria花室</title>
+    <!-- 換圖輪播css -->
+    <link rel="stylesheet" href="./css/carousel.css">
+    <!-- 自定義css -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -39,7 +42,86 @@
         </nav>
     </header>
     <main>
-        <section id="banner"></section>
+        <!-- banner區 -->
+        <!-- 換圖輪播 -->
+        <section id="banner">
+            <div class="content-slider">
+                <!-- 以下input是為了讓jq換圖的切換器，在css中設定為display:none; -->
+                <input type="radio" id="banner1" class="sec-1-input" name="banner" checked>
+                <input type="radio" id="banner2" class="sec-1-input" name="banner">
+                <input type="radio" id="banner3" class="sec-1-input" name="banner">
+                <input type="radio" id="banner4" class="sec-1-input" name="banner">
+                <input type="radio" id="banner5" class="sec-1-input" name="banner">
+                <!-- 輪播圖區塊 -->
+                <div class="slider">
+                    <div id="top-banner-1" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Creative Template</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-2">Learn More</a></div>
+                        </div>
+                    </div>
+                    <div id="top-banner-2" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>What We Do</h2>
+                            <h1>Great<br>MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-4">Learn More</a></div>
+                        </div>
+                    </div>
+                    <div id="top-banner-3" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Here We Are</h2>
+                            <h1>We Are<br>MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-6">Learn More</a></div>
+                        </div>
+                    </div>
+                    <div id="top-banner-4" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Our Contacts</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#main-footer">Learn More</a></div>
+                        </div>
+                    </div>
+                    <div id="top-banner-5" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>BANNER 5</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#main-footer">Learn More</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 輪播張數提示器 -->
+                <nav>
+                    <div class="controls">
+                        <label for="banner1">
+                            <!-- 進度條 -->
+                            <span class="progressbar"><span class="progressbar-fill"></span></span>
+                            <!-- 進度條下的文字，目前不需要，先註解掉 -->
+                            <!-- <span>01</span> Intro -->
+                        </label>
+                        <label for="banner2">
+                            <span class="progressbar"><span class="progressbar-fill"></span></span>
+                            <!-- <span>02</span> Work -->
+                        </label>
+                        <label for="banner3">
+                            <span class="progressbar"><span class="progressbar-fill"></span></span>
+                            <!-- <span>03</span> About -->
+                        </label>
+                        <label for="banner4">
+                            <span class="progressbar"><span class="progressbar-fill"></span></span>
+                            <!-- <span>04</span> Contacts -->
+                        </label>
+                        <label for="banner5">
+                            <span class="progressbar"><span class="progressbar-fill"></span></span>
+                        </label>
+                    </div>
+                </nav>
+            </div>
         </section>
         <!-- NEWS區 -->
         <section id="news">
@@ -292,10 +374,9 @@
                     Visit us today and let our flowers inspire your imagination. Discover the magic of floral elegance
                     and the joy it brings. Because here, every bloom is a testament to the enduring power of nature's
                     most exquisite creations.</p>
-
-
-
             </div>
+            <!-- 影片無法用css設定在背景，一定要寫在html裡面 -->
+            <video src="./images/flower.mp4" autoplay muted loop></video>
 
         </section>
         <!-- CONTACT區 -->
@@ -334,8 +415,15 @@
 
 
 
-
-
+    <!-- 先載入jquery原始碼，讓瀏覽器看懂 -->
+    <!-- 擇一使用 -->
+    <!-- 以下作者當初使用的原始碼 -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+    <!-- 以下現行jquery官方最新版CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- 換圖輪播js，必放在jquery之下 -->
+    <script src="./js/carousel.js"></script>
 </body>
 
 </html>
