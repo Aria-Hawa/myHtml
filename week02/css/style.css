@@ -180,17 +180,20 @@ a {
     /* 因此在.menu a時先設定好2px的線條空間出來(給透明值) */
 }
 
-.navigation .menu li {
+#topbar .navigation .menu li {
     border-right: solid 1px var(--deep);
     /* 新增右邊線 */
     line-height: 1;
 }
 
-.navigation .menu li:last-child {
+#topbar .navigation .menu li:last-child {
     border-right: none;
 }
 
 /* 每頁公用區 */
+section {
+    height: 100vh;
+}
 /* 變數 */
 /* 宣告變數 :root{} */
 :root{
@@ -289,7 +292,7 @@ a {
 /* 玻璃擬態共用 */
 #form-contact input,
 #form-contact textarea,
-.navigation .menu {
+#topbar .navigation .menu {
     border-radius: 10px;
     background-image: linear-gradient(-30deg, var(--gradient-w-a));
     box-shadow: var(--box-shadow-g);
@@ -603,8 +606,8 @@ outline: 2px solid var(--leeser-3);
     /* 游標模式 */
     cursor: pointer;
     /* text-transform: uppercase */   /* 設定字母大寫 */
-    height: 60px;
-    width: 210px;
+    height: 56px;
+    width: 150px;
     /* opacity: 1; */    /* 透明度 */
     /* 取消button預設值 */
     background-color: transparent;
@@ -683,3 +686,51 @@ transform: translate3d(0, 0, 0) translateZ(0);
     width: 300px;
     transform: rotate(-25deg);
 }
+
+/* footer區 */
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--primry);
+}
+
+footer div {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+footer small {
+    text-align: center;
+}
+
+footer .navigation .menu a {
+    padding: 0px 8px;
+    font-weight: 600;
+}
+
+footer .navigation .menu {
+    margin: 0px;
+    padding: 0px;
+}
+
+footer .navigation .submenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+footer .navigation .submenu a{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* 中型設備(平板) =>此設定820以下(抓ipad Air尺寸) */
+@media (max-width:820px){
+    footer div {
+        display: none;
+    }
+}
+/* 小型設備(手機) =>此設定640以下 */
+@media (max-width:640px){}
