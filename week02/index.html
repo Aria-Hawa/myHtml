@@ -18,28 +18,36 @@
         <h1 class="logo">
             <a href="#"><img src="./images/logo_b.svg" alt="Aria花室Logo"></a>
         </h1>
-        <!-- 選單列 -->
-        <nav class="navigation">
-            <!-- icon btn -->
-            <ul class="icon"> <!-- 快速寫法: ul.icon>li*3>a  -->
-                <!-- background比較像是class中的壁紙(刷油漆)，這就要去css寫 -->
-                <!-- background本身不會有尺寸，因此當沒有設定background的框架時，是無法顯示在網頁上的 -->
-                <!-- img比較像是在class中的一個"物件" ，不用特別設定本身就有尺寸-->
-                <li><a class="icon-fb" href=""></a></li>
-                <li><a class="icon-ig" href=""></a></li>
-                <li><a class="icon-line" href=""></a></li>
-                <li><a class='btn-s' href="./login.html">Login</a></li>
-            </ul>
-            <!-- 主選單 -->
-            <ul class="menu"> <!-- 快速寫法: ul.menu>li*6>a -->
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">SERVICE</a></li>
-                <li><a href="#">VIDEO</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">CONTACT</a></li>
-            </ul>
-        </nav>
+        <!-- 三條槓漢堡按鈕 -->
+        <div class="navbar">
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <!-- 選單列 -->
+            <nav class="navigation">
+                <!-- icon btn -->
+                <ul class="icon"> <!-- 快速寫法: ul.icon>li*3>a  -->
+                    <!-- background比較像是class中的壁紙(刷油漆)，這就要去css寫 -->
+                    <!-- background本身不會有尺寸，因此當沒有設定background的框架時，是無法顯示在網頁上的 -->
+                    <!-- img比較像是在class中的一個"物件" ，不用特別設定本身就有尺寸-->
+                    <li><a class="icon-fb" href=""></a></li>
+                    <li><a class="icon-ig" href=""></a></li>
+                    <li><a class="icon-line" href=""></a></li>
+                    <li><a class='btn-s' href="./login.html">Login</a></li>
+                </ul>
+                <!-- 主選單 -->
+                <ul class="menu"> <!-- 快速寫法: ul.menu>li*6>a -->
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">NEWS</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">VIDEO</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <!-- banner區 -->
@@ -180,6 +188,7 @@
                     </a>
                 </article>
             </div>
+            <a href="#" class="btn-s">more</a>
         </section>
         <!-- SERVICE區 -->
         <section id="service">
@@ -228,7 +237,7 @@
                     </a>
                 </li>
             </ul>
-
+            <a href="#" class="btn-s">more</a>
         </section>
         <!-- VIDEO區 -->
         <section id="video">
@@ -467,6 +476,8 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- 換圖輪播js，必放在jquery之下 -->
     <script src="./js/carousel.js"></script>
+    <!-- 自訂js，必定必定放最下面，要最後執行 -->
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
