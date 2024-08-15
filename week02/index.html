@@ -135,13 +135,13 @@
         <!-- NEWS區 -->
         <section id="news">
             <!-- 標題區 -->
-            <header class="title">
+            <header class="title smoove">
                 <h2>NEWS</h2>
                 <h3>最新消息</h3>
             </header>
             <!-- 列表區 -->
             <div class="box_list">
-                <article class="item">
+                <article class="item smoove" data-move-x="-120%" data-rotate="90deg">
                     <!-- 簡寫：a>(figure>img)+div.content>h1+p -->
                     <a href="#">
                         <figure><img src="./images/pt_news1.jpg" alt=""></figure>
@@ -157,7 +157,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove" data-move-x="-60%" data-rotate="45deg" data-move-y="100px">
                     <a href="#">
                         <figure><img src="./images/pt_news2.jpg" alt=""></figure>
                         <div class="content">
@@ -172,7 +172,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove" data-move-x="120%" data-rotate="-90deg">
                     <a href="#">
                         <figure><img src="./images/pt_news3.jpg" alt=""></figure>
                         <div class="content">
@@ -194,14 +194,14 @@
         <!-- SERVICE區 -->
         <section id="service">
             <!-- 標題區 -->
-            <header class="title">
+            <header class="title smoove">
                 <h2>SERVICE</h2>
                 <h3>服務項目</h3>
             </header>
             <!-- 列表區 -->
             <!-- 縮寫: ul.box_list>li.item*4>a[href="#"]>h1{SERVICE TITLE}>p -->
             <ul class="box_list">
-                <li class="item svc-1">
+                <li class="item svc-1 smoove" data-move-x="-200px">
                     <a class="content" href="#">
                         <h1>SERVICE TITLE
                             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam recusandae corrupti
@@ -210,7 +210,7 @@
                         </h1>
                     </a>
                 </li>
-                <li class="item svc-2">
+                <li class="item svc-2 smoove" data-move-x="-100px">
                     <a class="content" href="#">
                         <h1>SERVICE TITLE
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo fugiat animi beatae quaerat
@@ -219,7 +219,7 @@
                         </h1>
                     </a>
                 </li>
-                <li class="item svc-3">
+                <li class="item svc-3 smoove" data-move-x="100px">
                     <a class="content" href="#">
                         <h1>SERVICE TITLE
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo fugiat animi beatae quaerat
@@ -228,7 +228,7 @@
                         </h1>
                     </a>
                 </li>
-                <li class="item svc-4">
+                <li class="item svc-4 smoove" data-move-x="200px">
                     <a class="content" href="#">
                         <h1>SERVICE TITLE
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo fugiat animi beatae quaerat
@@ -242,19 +242,19 @@
         </section>
         <!-- VIDEO區 -->
         <section id="video">
-            <header class="title">
+            <header class="title smoove">
                 <h2>VIDEO</h2>
                 <h3>相關影片</h3>
             </header>
             <!-- 用div當影片容器 -->
             <div class="video">
-                <video src="./images/Planter.mp4" poster="./images/cover.jpg" controls></video>
+                <video src="./images/Planter.mp4" poster="./images/cover.jpg" controls class="smoove" data-move-x="-120%" data-rotate-y="-90deg"></video>
                 <!-- 瀏覽器設定autoplay必須搭配muted才能使用 -->
             </div>
         </section>
         <!-- ABOUT區 -->
         <section id="about">
-            <div class="about-content">
+            <div class="about-content smoove" data-move-z="-500px" data-move-y="150px" data-rotate-x="90deg">
                 <header class="title">
                     <h2>ABOUT</h2>
                     <h3>關於我們</h3>
@@ -479,6 +479,10 @@
     <!-- 以下現行jquery官方最新版CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- 載入jQuery Smoove CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+    
+
     <!-- 換圖輪播js，必放在jquery之下 -->
     <script src="./js/carousel.js"></script>
     <!-- 自訂js，必定必定放最下面，要最後執行 -->

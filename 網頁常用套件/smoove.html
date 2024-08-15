@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Smoove 滾動載入動畫</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(160, 226, 204);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 64px;
+            color: rgb(108, 129, 122);
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .col {
+            flex: 1;
+            /* 主軸(水平)為寬度均分 */
+            height: 300px;
+            margin: 15px;
+            background-color: rgb(201, 215, 208);
+        }
+
+        footer {
+            width: 100%;
+            height: 30vh;
+            background-color: rgb(160, 226, 204);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 64px;
+            color: rgb(108, 129, 122);
+        }
+    </style>
+</head>
+
+<body>
+    <header>BANNER</header>
+    <main>
+        <!-- 預設的淡入淡入 -->
+        <!-- 因為子元素並不需要各別設定，所以smoove寫在爸爸身上就好 -->
+        <div class="row smoove">
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <!-- 旋轉載入 -->
+        <div class="row">
+            <!-- data-move-x等設定是在定義物件起始位置 -->
+            <div class="col smoove" data-move-x="-120%" data-rotate="90deg"></div>
+            <div class="col smoove" data-move-x="-60%" data-rotate="45deg" data-move-y="100px"></div>
+            <div class="col smoove" data-move-x="120%" data-rotate="-90deg"></div>  
+        </div>
+        <!-- 左右載入 -->
+        <div class="row">
+            <div class="col smoove" data-move-x="-200px"></div>
+            <div class="col smoove" data-move-x="-100px"></div>
+            <div class="col smoove" data-move-x="100px"></div>
+            <div class="col smoove" data-move-x="200px"></div>
+        </div>
+        <!-- 開門翻轉 -->
+        <div class="row">
+            <div class="col smoove" data-move-x="-120%" data-rotate-y="-90deg"></div>
+            <div class="col smoove" data-move-x="120%" data-rotate-y="90deg"></div>
+        </div>
+        <!-- 透視翻轉(立牌) -->
+        <!-- 因為子元素並不需要各別設定，所以smoove寫在爸爸身上就好 -->
+        <div class="row smoove smoove-z">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+
+
+
+
+    </main>
+    <footer>Footer</footer>
+
+
+    <!-- 載入jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- 載入jQuery Smoove CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+    <!-- 開始Smoove效果 -->
+    <script>
+        // 多個元素共用的樣式可以謝在js區
+        $('.smoove').smoove({
+            // offset: 物體滑入視野之前到螢幕底部的距離
+            // 每個option結尾是逗號喔!!!
+            offset: '40%',
+        });
+    </script>
+</body>
+
+</html>

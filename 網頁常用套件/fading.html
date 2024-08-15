@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        #box1 {
+            background-color: rgb(119, 246, 204);
+            display: none;
+        }
+
+        #box2 {
+            background-color: rgb(246, 155, 119);
+        }
+
+        #box3 {
+            background-color: rgb(238, 246, 119);
+        }
+
+        #box4 {
+            background-color: rgb(244, 119, 246);
+        }
+    </style>
+</head>
+
+<body>
+    <button>按我執行</button>
+    <br><br>
+    <div id="box1">fadeIn</div>
+    <div id="box2">fadeOut</div>
+    <div id="box3">fadeToggle</div>
+    <div id="box4">fadeTo</div>
+
+    <!-- 載入jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- 開始寫jQuery -->
+    <script>
+        $(function () {
+            // 取得button
+            $('button').click(function () {
+                $('#box1').fadeIn(1500);
+                $('#box2').fadeOut('slow');
+                $('#box3').fadeToggle('fast');
+                // fadeTo一定要給參數，第一個秒數不定義也要給空值
+                // 第二個透明度
+                $('#box4').fadeTo("",0.9);
+            })
+            // 用F12檢查，發現fade功能是jQuery幫我在html上寫上style去變更的
+
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>
