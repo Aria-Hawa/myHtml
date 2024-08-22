@@ -1,0 +1,15 @@
+到Live Sass Compiler套件的擴充設定裡面，新增以下文字
+
+"liveSassCompile.settings.formats": [
+        {
+        "format": "expanded", //指定輸出格式為擴展
+        "extensionName": ".css", //擴展名稱
+        "savePath": "~/../css", //儲存位置,null表示當前目錄
+        },
+        // 新增更多檔案類型
+        {
+        "format": "compressed", //指定輸出格式為緊湊
+        "extensionName": ".min.css", //擴展名稱
+        "savePath": "~/../css",//儲存位置
+        }
+        ]

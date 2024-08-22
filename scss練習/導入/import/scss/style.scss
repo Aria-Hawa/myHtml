@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import 'reset';
+@import 'variables';
+
+
+.nav {
+    font-family: $font-family-tc;
+    font-size: map-get($font-size, m);
+    color: map-get($color, light);
+    background-color: $gradient-w-a;
+}

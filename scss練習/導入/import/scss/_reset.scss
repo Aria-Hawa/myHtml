@@ -1,0 +1,50 @@
+// 不需要匯出成css的scss檔案，檔名開頭要加上_(下底線)
+// 要導入的檔案，UTF-8不用寫，會自動產生
+
+/* 重置所有標籤的樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* RWD不累加內距padding與邊框border */
+}
+
+/* 重置字體 */
+body {
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    /* 已知此網頁的a都"不是文字超連結"，因此先把a設定為區塊 */
+    display: block;
+    text-decoration: none;
+    font-family: "Noto Sans TC", sans-serif;
+}

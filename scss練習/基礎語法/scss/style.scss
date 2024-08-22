@@ -1,0 +1,165 @@
+// !default為預設值設定，有設定default的變數權重最低，會被後面寫的覆蓋
+$font-size-s: .8rem !default;
+$font-size-s: .9rem;
+$font-size-m: 1rem;
+$font-size-l: 1.5rem;
+$font-size-xl: 2rem;
+
+// 群組
+$interval: (
+    s: 5px,
+    m: 10px,
+    l: 15px,
+);
+
+
+// 作用域設定
+// red設定在最初的變數設定裡面
+// 若我在某個區域重新宣告$color: blue，那這個重新宣告的變數只會在該區域呈現
+// 若重新宣告的時候加上!global字眼，代表從這個宣告的區域以下開始都改成新宣告的設定
+$color: red;
+
+// 設定前綴詞
+$product-pre: pdt;
+
+
+
+
+
+
+
+#customizePlace {
+    #preview {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-grow: 0.95;
+        color: $color;
+        margin: map-get($interval, l);
+
+        .preJersey {
+            width: 80%;
+            height: 80%;
+            margin-top: 40px;
+            color: $color;
+            margin: map-get($interval, s);
+
+            figure {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                border: 1px solid $color;
+                margin: map-get($interval, m);
+                background: {
+                    size: contain;
+                    repeat: no-repeat;
+                    position: center;
+                }
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+.customizePlaceBtn {
+    background-color: white;
+    color: $color;
+    $color: blue;
+    border-radius: 5px;
+
+    font: {
+        size: $font-size-s;
+        weight: 600;
+    }
+
+    padding: 3px;
+    margin-left: 10px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--Orange);
+        color: $color;
+    }
+
+    &:active {
+        background-color: var(--Darkorange);
+        color: $color;
+    }
+}
+
+.chooseColor {
+    color: $color;
+    width: 95%;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: auto;
+    animation: hide 1.35s both;
+    display: none;
+
+    &.show {
+        display: flex;
+        animation: show 0.55s both;
+        margin-top: 10px;
+        color: $color;
+        $color: pink !global;
+    }
+}
+
+.stylePreview {
+    .whichFace {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        color: $color;
+
+        a {
+            width: 165px;
+            text-align: center;
+            padding-bottom: 12px;
+            border-bottom: 1px solid $color;
+            margin-bottom: 16px;
+
+            &:focus,
+            &:active {
+                background-color: var(--Darkblue);
+                border-color: var(--Orange);
+                color: $color;
+            }
+        }
+    }
+}
+
+#operate {
+    .#{$product-pre}Info {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-items: center;
+        border-top: 1px solid white;
+        flex-grow: 0.3;
+
+        .#{$product-pre}InfoContent {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            height: 100%;
+            padding-right: 32px;
+            border-right: 1px solid white;
+
+            .#{$product-pre}Info .#{$product-pre}InfoContent .discontTxt {
+                color: var(--Lightblue);
+                padding: 8px;
+                border: 1px solid var(--Lightblue);
+            }
+        }
+    }
+
+}
