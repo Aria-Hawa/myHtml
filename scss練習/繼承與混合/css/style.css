@@ -1,0 +1,139 @@
+@charset "UTF-8";
+/* 重置所有標籤的樣式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* RWD不累加內距padding與邊框border */
+}
+
+/* 重置字體 */
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+/* 重置列表 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 重置圖片 */
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 重置連接 */
+a {
+  /* 已知此網頁的a都"不是文字超連結"，因此先把a設定為區塊 */
+  display: block;
+  text-decoration: none;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+#form-contact input, #form-contact textarea, #topbar .navigation .menu {
+  border-radius: 10px;
+  background-image: linear-gradient(-30deg, rgba(255, 255, 255, 0.8), rgba(220, 185, 185, 0.8));
+  box-shadow: #444;
+  backdrop-filter: blur(1px);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+#form-contact input, #form-contact textarea {
+  width: 100%;
+  padding: 10px;
+  color: #b06468;
+  letter-spacing: 2px;
+  font-size: 16px;
+  font-weight: 600;
+  /* 取消input...的預設值 */
+  background-color: transparent;
+  border: none;
+}
+
+.nav {
+  color: #f1f1f1;
+  background-color: rgba(255, 255, 255, 0.8), rgba(220, 185, 185, 0.8);
+}
+
+#form-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+  font-family: "Noto Sans TC", sans-serif;
+}
+#topbar {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  border: 1px solid #f1f1f1;
+}
+#topbar .navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#topbar .navigation .icon {
+  display: flex;
+}
+#topbar .navigation .menu {
+  display: flex;
+  padding: 8px 0px;
+  margin: 15px 0px;
+}
+
+section {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid #cdaaab;
+}
+
+#service {
+  background-color: #e6ece5;
+}
+#service p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#news {
+  background-color: #f2edf0;
+}
+#news p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}/*# sourceMappingURL=style.css.map */

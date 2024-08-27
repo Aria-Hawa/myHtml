@@ -1,0 +1,13 @@
+@use 'reset';
+// @use 'variables' as v;
+// v改用*，這樣套用時就不用寫v.
+@use 'variables' as *;
+
+.nav {
+    color: map-get($color, light );
+    background-color: $gradient-w8-a8;
+}
+
+.nav menu {
+    background-image: linear-gradient($gradient-w-a);
+}

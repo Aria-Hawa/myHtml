@@ -1,0 +1,87 @@
+@use 'reset';
+// @use 'variables' as v;
+// v改用*，這樣套用時就不用寫v.
+@use 'variables' as *;
+@use 'function' as *;
+
+
+.nav {
+    color: map-get($color, light);
+    background-color: $gradient-w8-a8;
+}
+
+#form-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+    font-family: $font-family-tc;
+
+    input {
+        @extend %glassmorphism;
+        @extend %inputNtextarea;
+    }
+
+    textarea {
+        @extend %glassmorphism;
+        @extend %inputNtextarea;
+    }
+}
+
+#topbar {
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    @include flex-align-center;
+    justify-content: space-between;
+    padding: 30px;
+    @include bordered (1px, map-get($color, light));
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .icon {
+            display: flex;
+        }
+
+        .menu {
+            display: flex;
+            padding: 8px 0px;
+            margin: 15px 0px;
+            @extend %glassmorphism;
+        }
+
+    }
+
+}
+
+section {
+    @include flex-center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.title {
+    @include flex-align-center;
+    flex-direction: column;
+    @include bordered (2px, map-get($color, leeser-3));
+
+}
+
+#service {
+    background-color: map-get($color, secondary );
+
+    p {
+        @include single-ellipsis;
+    }
+}
+
+#news {
+    background-color: map-get($color, primry) ;
+    
+    p {
+        @include multiple-ellipsis(5);
+    }
+}

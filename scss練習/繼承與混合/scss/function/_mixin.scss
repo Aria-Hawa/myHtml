@@ -1,0 +1,36 @@
+@mixin flex-center {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+@mixin flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin bordered ($width, $color) {
+    border: $width solid $color;
+}
+
+@mixin mask {
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: cover;
+}
+
+@mixin multiple-ellipsis ($line-clamp) {
+    // 多行省略
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line-clamp;
+}
+
+@mixin single-ellipsis {
+    // 單行省略
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap ;
+}
