@@ -44,18 +44,29 @@
 
         .icon {
             display: flex;
-        }
 
-        .menu {
-            display: flex;
-            padding: 8px 0px;
-            margin: 15px 0px;
-            @extend %glassmorphism;
-        }
+            // each/list迴圈
+            @each $social in fb, ig, line {
+                .icon-#{$social} {
+                    background-image: url(../images/icon-#{$social}.svg);
 
+                    &:hover {
+                        background-image: url(../images/icon-#{$social}-hover.svg);
+                    }
+                }
+            }
+        }
+    }
+
+    .menu {
+        display: flex;
+        padding: 8px 0px;
+        margin: 15px 0px;
+        @extend %glassmorphism;
     }
 
 }
+
 
 section {
     @include flex-center;
@@ -71,7 +82,7 @@ section {
 }
 
 #service {
-    background-color: map-get($color, secondary );
+    background-color: map-get($color, secondary);
 
     p {
         @include single-ellipsis;
@@ -79,8 +90,8 @@ section {
 }
 
 #news {
-    background-color: map-get($color, primry) ;
-    
+    background-color: map-get($color, primry);
+
     p {
         @include multiple-ellipsis(5);
     }

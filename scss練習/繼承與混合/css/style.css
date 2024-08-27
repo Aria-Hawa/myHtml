@@ -47,7 +47,7 @@ a {
   font-family: "Noto Sans TC", sans-serif;
 }
 
-#form-contact input, #form-contact textarea, #topbar .navigation .menu {
+#form-contact input, #form-contact textarea, #topbar .menu {
   border-radius: 10px;
   background-image: linear-gradient(-30deg, rgba(255, 255, 255, 0.8), rgba(220, 185, 185, 0.8));
   box-shadow: #444;
@@ -97,7 +97,25 @@ a {
 #topbar .navigation .icon {
   display: flex;
 }
-#topbar .navigation .menu {
+#topbar .navigation .icon .icon-fb {
+  background-image: url(../images/icon-fb.svg);
+}
+#topbar .navigation .icon .icon-fb:hover {
+  background-image: url(../images/icon-fb-hover.svg);
+}
+#topbar .navigation .icon .icon-ig {
+  background-image: url(../images/icon-ig.svg);
+}
+#topbar .navigation .icon .icon-ig:hover {
+  background-image: url(../images/icon-ig-hover.svg);
+}
+#topbar .navigation .icon .icon-line {
+  background-image: url(../images/icon-line.svg);
+}
+#topbar .navigation .icon .icon-line:hover {
+  background-image: url(../images/icon-line-hover.svg);
+}
+#topbar .menu {
   display: flex;
   padding: 8px 0px;
   margin: 15px 0px;
