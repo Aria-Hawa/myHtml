@@ -1,0 +1,39 @@
+@use '../variables/' as *;
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin bordered-left ($width: 5px, $color:map-get($color, dark)) {
+    border-left: $width solid $color;
+}
+
+@mixin mask {
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: cover;
+}
+
+@mixin multiple-ellipsis ($line-clamp) {
+    // 多行省略
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line-clamp;
+}
+
+@mixin single-ellipsis {
+    // 單行省略
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap ;
+}
+

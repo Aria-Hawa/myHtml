@@ -1,0 +1,106 @@
+@use 'variables' as *;
+@use 'function' as *;
+
+// 自定義
+img {
+    display: block;
+    width: 100%;
+}
+
+// 共用區
+.title {
+    position: relative;
+    @include bordered-left();
+    padding-left: 1.5rem;
+    margin: 85px 0px 35px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        background-color: map-get($color , dark);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 11.5rem;
+        bottom: 0;
+        background-color: map-get($color , dark);
+        width: calc(100% - 11.5rem);
+        height: 3px
+    }
+
+    h3 {
+        line-height: 1;
+
+        span {
+            font: {
+                size: 1rem;
+            }
+        }
+    }
+
+}
+
+.mask-title {
+    mask-image: url(../images/mask.svg);
+    // mask-size: 84% 100%;
+    mask-position: center;
+    mask-repeat: no-repeat;
+
+    @media ($media-md) {
+        mask-size: 88% 100%;
+    }
+
+    @media ($media-lg) {
+        mask-size: 92% 100%;
+    }
+}
+
+.mask {
+    mask-size: 100% 100%;
+    mask-position: center;
+    mask-repeat: no-repeat;
+}
+
+// 最新商品區
+#new {
+    a {
+        position: relative;
+        color: map-get($color, light);
+
+        &:hover {
+            h2 {
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            opacity: 0;
+            position: absolute;
+            background-color: map-get($color, alpha-b-60);
+            width: 100%;
+            height: 100%;
+            @include flex-center;
+            transition: .4s all;
+        }
+    }
+
+    .blob-1 {
+        mask-image: url(../images/blobs-1.svg);
+    }
+
+    .blob-2 {
+        mask-image: url(../images/blobs-2.svg);
+    }
+
+    .blob-3 {
+        mask-image: url(../images/blobs-3.svg);
+    }
+
+}
