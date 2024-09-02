@@ -1,99 +1,157 @@
 img {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .title {
-    position: relative;
-    border-left: 5px solid #212529;
-    padding-left: 1.5rem;
-    margin: 85px 0px 35px;
+  position: relative;
+  border-left: 5px solid #212529;
+  padding-left: 1.5rem;
+  margin: 85px 0px 35px;
 }
-
 .title::before {
-    content: "";
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    background-color: #212529;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background-color: #212529;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 }
-
 .title::after {
-    content: "";
-    position: absolute;
-    left: 11.5rem;
-    bottom: 0;
-    background-color: #212529;
-    width: calc(100% - 11.5rem);
-    height: 3px;
+  content: "";
+  position: absolute;
+  left: 11.5rem;
+  bottom: 0;
+  background-color: #212529;
+  width: calc(100% - 11.5rem);
+  height: 3px;
 }
-
 .title h3 {
-    line-height: 1;
+  line-height: 1;
 }
-
 .title h3 span {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .mask-title {
-    mask-image: url(../images/mask.svg);
-    mask-position: center;
-    mask-repeat: no-repeat;
+  mask-image: url(../images/mask.svg);
+  mask-position: center;
+  mask-repeat: no-repeat;
 }
-
 @media (min-width:768px) {
-    .mask-title {
-        mask-size: 88% 100%;
-    }
+  .mask-title {
+    mask-size: 88% 100%;
+  }
 }
-
 @media (min-width:992px) {
-    .mask-title {
-        mask-size: 92% 100%;
-    }
+  .mask-title {
+    mask-size: 92% 100%;
+  }
 }
 
 .mask {
-    mask-size: 100% 100%;
-    mask-position: center;
-    mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  mask-position: center;
+  mask-repeat: no-repeat;
 }
 
 #new a {
-    position: relative;
-    color: #f1f1f1;
+  position: relative;
+  color: #f1f1f1;
 }
-
 #new a:hover h2 {
-    opacity: 1;
+  opacity: 1;
 }
-
 #new a h2 {
-    opacity: 0;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s all;
+  opacity: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s all;
 }
-
 #new .blob-1 {
-    mask-image: url(../images/blobs-1.svg);
+  mask-image: url(../images/blobs-1.svg);
 }
-
 #new .blob-2 {
-    mask-image: url(../images/blobs-2.svg);
+  mask-image: url(../images/blobs-2.svg);
 }
-
 #new .blob-3 {
-    mask-image: url(../images/blobs-3.svg);
+  mask-image: url(../images/blobs-3.svg);
 }
 
-/*# sourceMappingURL=style.css.map */
+#hot .col {
+  position: relative;
+}
+#hot .col h2 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: calc(50% - 1.5rem);
+  left: 0%;
+  z-index: 1;
+  font-size: 3rem;
+  color: #f1f1f1;
+  text-shadow: 1px 1px 3px black;
+}
+#hot .col .clip {
+  display: block;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  position: relative;
+}
+#hot .col .clip::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  transition: 0.8s all;
+}
+#hot .col .clip:hover::before {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.tabs-btn {
+  display: flex;
+}
+.tabs-btn li {
+  flex: 1;
+}
+
+.ui-tabs .ui-tabs-panel {
+  display: flex;
+}
+.ui-tabs .ui-tabs-panel > div {
+  flex: 1;
+}
+
+.ui-tabs .ui-tabs-nav li {
+  border-bottom-width: 2px;
+  border-radius: 3px;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+  border: 2px solid #999;
+  background: transparent;
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+  padding: 0;
+}
+
+.ui-widget-header {
+  border: none;
+  background: transparent;
+}/*# sourceMappingURL=style.css.map */
