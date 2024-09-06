@@ -1,11 +1,16 @@
-// 群組
+// 群組 map-get( $interval , )
 $interval: (
     s: 5px,
     m: 10px,
     l: 15px,
 );
+$interval-s: 5px;
+$interval-m: 10px;
+$interval-l: 15px;
+$interval-xl: 20px;
+$interval-xxl: 25px;
 
-// 最大寬度
+// 最大寬度 map-get( $max-width , )
 $max-width: (
     s: 800px,
     m: 1000px,

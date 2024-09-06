@@ -8,6 +8,39 @@ img {
 }
 
 // 共用區
+img {
+    display: block;
+    width: 100%;
+}
+
+// bs換圖輪播
+.carousel {
+    img {
+        object-fit: cover;
+        height: 100%;
+    }
+
+    .carousel-item {
+        height: calc(100vh - 70px);
+    }
+}
+
+// navbar區
+.navbar {
+    height: 70px;
+
+    .navbar-brand {
+        img {
+            height: 50px;
+        }
+    }
+
+}
+
+
+
+
+
 .title {
     position: relative;
     @include bordered-left();
@@ -160,6 +193,48 @@ img {
 }
 
 // 推薦商品區
+#acc {
+    .title {
+        &::after {
+            left: 15rem;
+            width: calc(100% - 15rem);
+        }
+    }
+}
+
+#tabs {
+    width: 80%;
+    margin: 0px auto;
+
+    .content {
+        padding: $interval-xxl;
+
+        >* {
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            display: inline-block;
+            color: map-get($color, light);
+            background-color: map-get($color, dark);
+            padding: map-get($interval , s) map-get($interval , m);
+            box-shadow: $box-shadow-mark;
+        }
+
+        data {
+            display: block;
+        }
+
+        .price {
+            mark {
+                background-color: map-get($color, mark);
+                font-size: map-get($font-size, l);
+                font-weight: 500;
+            }
+        }
+    }
+}
+
 .tabs-btn {
     display: flex;
 
@@ -173,14 +248,16 @@ img {
     display: flex;
 
     // >選擇父元素的第一層子元素
-    > div {
+    >div {
         flex: 1;
     }
 }
+
 .ui-tabs .ui-tabs-nav li {
     border-bottom-width: 2px;
     border-radius: 3px;
 }
+
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active,
@@ -190,10 +267,24 @@ a.ui-button:active,
     border: 2px solid map-get($color, grey);
     background: transparent;
 }
+
 .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
     padding: 0;
 }
+
 .ui-widget-header {
     border: none;
     background: transparent;
+}
+
+
+
+
+
+footer {
+    background-color: map-get($color , dark);
+    color: map-get($color, light);
+    text-align: center;
+    padding: $interval-xl 0;
+    margin-top: $interval-xxl;
 }

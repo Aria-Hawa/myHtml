@@ -28,9 +28,16 @@ $color:(
     alpha-g-70: rgba(68, 68, 68, 0.7),
     alpha-r-60: rgba(220, 185 ,185, .6),
     alpha-r-70: rgba(203, 92, 92, 0.7),
+
+    // 標記
+    mark: greenyellow,
 );
 
 // 漸層
 // 數列(中間有逗號)就不能加入map裡面，要獨立一個變數
 $gradient-w-a: rgba(255, 255, 255, 0.15), rgba(220, 185 ,185, .5);
 $gradient-w8-a8: rgba(255, 255, 255, 0.8), rgba(220, 185 ,185, .8);
+
+// 陰影
+$box-shadow-g: 2px 2px 3px map-get($color, dark );
+$box-shadow-mark: 8px 8px 0 map-get($color, mark );

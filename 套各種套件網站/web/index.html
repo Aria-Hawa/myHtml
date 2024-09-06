@@ -11,15 +11,127 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- 載入jquery UI CSS -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+    <!-- 載入 fontawesome CSS -->
+    <link rel="stylesheet" href="./css/all.min.css">
     <!-- 自定義css權重要大於bookstrap的才會覆蓋過去，所以要放在bookstrap下面 -->
     <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
 <body>
     <!-- 頁首 -->
-    <header id="banner">Banner</header>
+    <header id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-pause="fales"
+        data-bs-interval="3500">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./images/slide01.jpg" class="d-block w-100" alt="slide01">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/slide02.jpg" class="d-block w-100" alt="slide02">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/slide03.jpg" class="d-block w-100" alt="slide03">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/slide04.jpg" class="d-block w-100" alt="slide04">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Fourth slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </header>
+
     <!-- 導覽列 -->
-    <nav>Button</nav>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <!-- logo -->
+            <a class="navbar-brand" href="#"><img src="./images/logo.svg" alt=""></a>
+            <!-- RWD的選單按鈕 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- 主選單 -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#new">最新商品</a></li>
+                    <li><a class="nav-link" href="#hot">熱門商品</a></li>
+                    <li><a class="nav-link" href="#acc">推薦商品</a></li>
+                    <!-- 下拉選單 .dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            全部商品
+                        </a>
+                        <!-- 下拉子選單 -->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">男裝</a></li>
+                            <li><a class="dropdown-item" href="#">女裝</a></li>
+                            <li><a class="dropdown-item" href="#">童裝</a></li>
+                            <!-- hr標籤分隔線 -->
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">飾品</a></li>
+                            <li><a class="dropdown-item" href="#">鞋襪</a></li>
+                        </ul>
+                    </li>
+                    <!-- 禁用的item .disabled? -->
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">會員專區</a>
+                    </li>
+                </ul>
+                <ul class="icon">
+                    <li><i class="fa-solid fa-user"></i></li>
+                    <li><i class="fa-solid fa-heart"></i></li>
+                    <li><i class="fa-solid fa-envelope"></i></li>
+                </ul>
+                <!-- form搜尋列 -->
+                <!-- <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+            </div>
+        </div>
+    </nav>
+
+
     <!-- 最新商品 -->
     <section id="new" class="container">
         <!-- 區塊標題 -->
@@ -72,7 +184,6 @@
                 </a>
             </div>
         </div>
-
     </section>
 
     <!-- 熱門商品 -->
@@ -98,7 +209,6 @@
         </div>
     </section>
 
-
     <!-- 推薦商品 -->
     <section id="acc" class="container">
         <!-- 區塊標題 -->
@@ -110,58 +220,103 @@
             <!-- 頁籤內容區 -->
             <div id="tabs-1">
                 <div><img src="./images/accessories/thumbs/accessories1_s.jpg" alt=""></div>
-                <div><h2>title name</h2></div>
+                <div class="content">
+                    <h2>珍珠頸鏈</h2>
+                    <data value="No. p01856163">多色 | 1856/163</data>
+                    <div class="price">
+                        <del>NT$ 1,490</del>
+                        <mark>-33% NT$ 990</mark>
+                    </div>
+                    <p>多層項鍊；搭配人造珍珠和彩色珠飾鑲飾；龍蝦扣固定。</p>
+                    <details>
+                        <summary>材質</summary> <!-- details預設文字:詳細資料，要修改就要用summary -->
+                        <pre>   <!-- <pre> 預格式化的文本 -->
+    75% 亞克力纖維
+    10% 鋅
+    5% 聚酯纖維
+    5% 鐵
+    5% 黃銅
+</pre>
+                    </details>
+                </div>
             </div>
             <div id="tabs-2">
-                <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id
-                    nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros
-                    molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula
-                    in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis.
-                    Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat.
-                    Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod
-                    felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+                <div><img src="./images/accessories/thumbs/accessories2_s.jpg" alt=""></div>
+                <div class="content">
+                    <h2>貝殼繩索項鍊</h2>
+                    <data value="No. p04736029">銀色 | 4736/029</data>
+                    <div class="price">
+                        <del>NT$ 990</del>
+                        <mark>-40% NT$ 590</mark>
+                    </div>
+                    <p>多條繩索項鍊；搭配貝殼造型金屬墜子；龍蝦扣閉合。</p>
+                    <details>
+                        <summary>材質</summary> <!-- details預設文字:詳細資料，要修改就要用summary -->
+                        <pre>
+    67% recyklovaný zinek s certifikací RCS
+    28% 經 RCS 認證的再生聚酯纖維
+</pre>
+                    </details>
+                </div>
             </div>
             <div id="tabs-3">
-                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel
-                    vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class
-                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales.
-                    Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium.
-                    Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-                <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla
-                    facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse
-                    potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor
-                    eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi
-                    lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum
-                    rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus
-                    hendrerit hendrerit.</p>
+                <div><img src="./images/accessories/thumbs/accessories3_s.jpg" alt=""></div>
+                <div class="content">
+                    <h2>金屬貝殼項鍊</h2>
+                    <data value="No. p04548044">金黃色 | 4548/044</data>
+                    <div class="price">
+                        <del>NT$ 1,190</del>
+                        <mark>-33% NT$ 790</mark>
+                    </div>
+                    <p>管狀金屬飾件項鍊；搭配貝殼吊飾；龍蝦扣固定。</p>
+                    <details>
+                        <summary>材質</summary> <!-- details預設文字:詳細資料，要修改就要用summary -->
+                        <pre>
+    76% 鋅
+    12% 鋼
+    12% 貝殼
+</pre>
+                    </details>
+                </div>
             </div>
             <div id="tabs-4">
-                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel
-                    vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class
-                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales.
-                    Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium.
-                    Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-                <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla
-                    facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse
-                    potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor
-                    eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi
-                    lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum
-                    rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus
-                    hendrerit hendrerit.</p>
+                <div><img src="./images/accessories/thumbs/accessories4_s.jpg" alt=""></div>
+                <div class="content">
+                    <h2>紋理手鐲套裝</h2>
+                    <data value="No. p01856041">銀色 | 1856/041</data>
+                    <div class="price">
+                        <del>NT$ 790</del>
+                        <mark>-37% NT$ 490</mark>
+                    </div>
+                    <p>多條紋理金屬手鐲套裝。</p>
+                    <details>
+                        <summary>材質</summary> <!-- details預設文字:詳細資料，要修改就要用summary -->
+                        <pre>
+    100% 經 RCS 認證的再生黃銅
+</pre>
+                    </details>
+                </div>
             </div>
             <div id="tabs-5">
-                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel
-                    vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class
-                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales.
-                    Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium.
-                    Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-                <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla
-                    facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse
-                    potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor
-                    eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi
-                    lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum
-                    rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus
-                    hendrerit hendrerit.</p>
+                <div><img src="./images/accessories/thumbs/accessories5_s.jpg" alt=""></div>
+                <div class="content">
+                    <h2>三層寶石耳環</h2>
+                    <data value="No. p04736013">金黃色 | 4736/013</data>
+                    <div class="price">
+                        <del>NT$ 650</del>
+                        <mark>-40% NT$ 390</mark>
+                    </div>
+                    <p>金屬長耳環；搭配彩色水鑽鑲飾；耳釘固定。</p>
+                    <details>
+                        <summary>材質</summary> <!-- details預設文字:詳細資料，要修改就要用summary -->
+                        <pre>
+    65% 石
+    30% 鋅
+    3% 鐵
+    2% 銅
+</pre>
+                    </details>
+                </div>
             </div>
             <!-- 頁籤按鈕區 -->
             <ul class="tabs-btn">
@@ -176,10 +331,150 @@
 
 
     </section>
+
     <!-- 全部商品 -->
-    <section id="all" class="container"></section>
+    <section id="all" class="container">
+        <header class="title">
+            <h3>全部商品<span>ALL</span></h3>
+        </header>
+        <div class="row">
+            <div class="col-6  col-sm-4 col-lg-3">
+                <a href=""><img src="./images/product/default-img1.jpg" alt="產品1" class="hover-image"
+                        data-hover="./images/product/hover-img1.jpg"></a>
+                <div class="content">
+                    <h4>Product-1</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+            <!-- 簡寫: div.col-6.col-sm-4.col-lg-3*15>(a[href='product-page.html']>img.hover-image[src="./images/product/default-img$.jpg" alt="產品$" data-hover="./images/product/hover-img$.jpg" ])+div.content>(h4{Product-$})+p{NT .99999} -->
+            <div class="col-6 col-sm-4 col-lg-3">
+                <a href="product-page.html"><img src="./images/product/default-img1.jpg" alt="產品1" class="hover-image"
+                        data-hover="./images/product/hover-img1.jpg"></a>
+                <div class="content">
+                    <h4>Product-1</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3">
+                <a href="product-page.html"><img src="./images/product/default-img2.jpg" alt="產品2" class="hover-image"
+                        data-hover="./images/product/hover-img2.jpg"></a>
+                <div class="content">
+                    <h4>Product-2</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3">
+                <a href="product-page.html"><img src="./images/product/default-img3.jpg" alt="產品3" class="hover-image"
+                        data-hover="./images/product/hover-img3.jpg"></a>
+                <div class="content">
+                    <h4>Product-3</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3">
+                <a href="product-page.html"><img src="./images/product/default-img4.jpg" alt="產品4" class="hover-image"
+                        data-hover="./images/product/hover-img4.jpg"></a>
+                <div class="content">
+                    <h4>Product-4</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3">
+                <a href="product-page.html"><img src="./images/product/default-img5.jpg" alt="產品5" class="hover-image"
+                        data-hover="./images/product/hover-img5.jpg"></a>
+                <div class="content">
+                    <h4>Product-5</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3">
+                <a href="product-page.html"><img src="./images/product/default-img6.jpg" alt="產品6" class="hover-image"
+                        data-hover="./images/product/hover-img6.jpg"></a>
+                <div class="content">
+                    <h4>Product-6</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3">
+                <a href="product-page.html"><img src="./images/product/default-img7.jpg" alt="產品7" class="hover-image"
+                        data-hover="./images/product/hover-img7.jpg"></a>
+                <div class="content">
+                    <h4>Product-7</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3">
+                <a href="product-page.html"><img src="./images/product/default-img8.jpg" alt="產品8" class="hover-image"
+                        data-hover="./images/product/hover-img8.jpg"></a>
+                <div class="content">
+                    <h4>Product-8</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3">
+                <a href="product-page.html"><img src="./images/product/default-img9.jpg" alt="產品9" class="hover-image"
+                        data-hover="./images/product/hover-img9.jpg"></a>
+                <div class="content">
+                    <h4>Product-9</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3">
+                <a href="product-page.html"><img src="./images/product/default-img10.jpg" alt="產品10" class="hover-image"
+                        data-hover="./images/product/hover-img10.jpg"></a>
+                <div class="content">
+                    <h4>Product-10</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3">
+                <a href="product-page.html"><img src="./images/product/default-img11.jpg" alt="產品11" class="hover-image"
+                        data-hover="./images/product/hover-img11.jpg"></a>
+                <div class="content">
+                    <h4>Product-11</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3">
+                <a href="product-page.html"><img src="./images/product/default-img12.jpg" alt="產品12" class="hover-image"
+                        data-hover="./images/product/hover-img12.jpg"></a>
+                <div class="content">
+                    <h4>Product-12</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3">
+                <a href="product-page.html"><img src="./images/product/default-img13.jpg" alt="產品13" class="hover-image"
+                        data-hover="./images/product/hover-img13.jpg"></a>
+                <div class="content">
+                    <h4>Product-13</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3">
+                <a href="product-page.html"><img src="./images/product/default-img14.jpg" alt="產品14" class="hover-image"
+                        data-hover="./images/product/hover-img14.jpg"></a>
+                <div class="content">
+                    <h4>Product-14</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3">
+                <a href="product-page.html"><img src="./images/product/default-img15.jpg" alt="產品15" class="hover-image"
+                        data-hover="./images/product/hover-img15.jpg"></a>
+                <div class="content">
+                    <h4>Product-15</h4>
+                    <p>NT .99999</p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
     <!-- 頁尾 -->
-    <footer></footer>
+    <footer>2024 copyright &copy; ZARA .</footer>
 
 
 
