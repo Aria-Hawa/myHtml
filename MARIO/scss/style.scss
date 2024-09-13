@@ -1,0 +1,241 @@
+@use 'reset';
+@use 'variables' as *;
+@use 'function' as *;
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap');
+
+body {
+    font-family: $font-family-en;
+    color: map-get($color, light);
+}
+
+.basic-btn {
+    display: inline-block;
+    @include basic-btn;
+    // btn的hover可以直接寫在mixin裡面
+}
+
+header {
+    position: fixed;
+}
+
+main {
+    @extend %flex-both-center;
+    flex-direction: column;
+
+    section {
+        @extend %flex-both-center;
+        width: 100%;
+        height: 100vh;
+    }
+
+    #banner {
+        background-image: url(../images/bg-pattern-logos.png),
+            linear-gradient(165deg, map-get($color, primary) 15%, map-get($color, secondary1) 75%);
+        overflow: hidden;
+
+
+        >div {
+            flex: 1;
+        }
+
+        .content {
+            padding: $interval-xxxl;
+
+            h2 {
+                font-size: map-get($font-size, xxl);
+                font-weight: 900;
+                line-height: 7rem;
+
+                span {
+                    font-size: map-get($font-size, xl);
+                    font-weight: 800;
+                }
+            }
+
+            p {
+                font-size: map-get($font-size, l);
+                line-height: map-get($font-size, l)*1.5;
+                margin: $interval-xxl 0;
+            }
+        }
+
+        .photo {
+            position: relative;
+            height: 100%;
+
+            figure {
+                position: absolute;
+            }
+
+            // banner1 0~4s
+            .mario1 {
+                width: 55%;
+                // top: 10vh;
+                left: -5%;
+                animation: mario1 12s ease-in-out both infinite;
+                // 有三張，共12秒，一張4秒
+            }
+
+            @keyframes mario1 {
+                0% {top:100vh}
+                // 1.2s
+                10% {top:10vh}
+                // 2.4s
+                20% {top:10vh}
+                // 3.6s
+                30% {top:100vh}
+                // 12s
+                100% {top:100vh}
+            }
+
+            .luigi {
+                width: 45%;
+                // top: 20vh;
+                left: 50%;
+                animation: luigi 12s 0.3s ease-in-out both infinite;
+            }
+            @keyframes luigi {
+                0% {top:100vh}
+                // 1.5s
+                10% {top:20vh}
+                // 2.7s
+                20% {top:20vh}
+                // 3.9s
+                30% {top:100vh}
+                // 12s
+                100% {top:100vh}
+            }
+
+            .brick {
+                width: 80%;
+                top: 5vh;
+                // right: -5%;
+                animation: brick 12s 0.4s ease-in-out both infinite;
+
+            }
+            @keyframes brick {
+                0% {right:-100%}
+                // 1.3s
+                10% {right:-5%}
+                // 2.5s
+                20% {right:-5%}
+                // 3.7s
+                30% {right:-100%}
+                // 12s
+                100% {right:-100%}
+            }
+
+            // banner2 4s~8S
+            .mario2 {
+                width: 55%;
+                // top: 20vh;
+                left: -5%;
+                animation: mario2 12s 4s ease-in-out both infinite;
+            }
+            @keyframes mario2 {
+                0% {top:100vh}
+                // 5.2s
+                10% {top:20vh}
+                // 6.4s
+                20% {top:20vh}
+                // 7.6s
+                30% {top:100vh}
+                // 12s
+                100% {top:100vh}
+            }
+
+            .peach {
+                width: 45%;
+                // top: 20vh;
+                left: 35%;
+                animation: peach 12s 4.4s ease-in-out both infinite;
+            }
+            @keyframes peach {
+                0% {top:100vh}
+                // 5.8s
+                10% {top:20vh}
+                // 6.8s
+                20% {top:20vh}
+                // 8s
+                30% {top:100vh}
+                // 12s
+                100% {top:100vh}
+            }
+
+            .pipe {
+                width: 35%;
+                // top: 5vh;
+                right: 3%;
+                animation: pipe 12s 4.5s ease-in-out both infinite;
+            }
+            @keyframes pipe {
+                0% {top:100vh}
+                //5.7s
+                10% {top:5vh}
+                // 6.9s
+                20% {top:5vh}
+                // 8.1s
+                30% {top:100vh}
+                // 12s
+                100% {top:100vh}
+            }
+
+            // banner3 8s~12s
+            .mario3 {
+                width: 80%;
+                // top: 15vh;
+                left: -15%;
+                animation: mario3 12s 8s ease-in-out both infinite;
+            }
+            @keyframes mario3 {
+                0% {top:100vh}
+                // 9.2s
+                10% {top:15vh}
+                // 10.4s
+                20% {top:15vh}
+                // 11.6s
+                30% {top:100vh}
+                // 12s
+                100% {top:100vh}
+            }
+
+
+            .toad {
+                width: 45%;
+                // top: 23vh;
+                left: 44%;
+                animation: toad 12s 8.3s ease-in-out both infinite;
+            }
+            @keyframes toad {
+                0% {top:100vh}
+                // 9.5s
+                10% {top:23vh}
+                // 10.7s
+                20% {top:23vh}
+                // 11.9s
+                30% {top:100vh}
+                // 12s
+                100% {top:100vh}
+            }
+
+            .star {
+                width: 30%;
+                // top: 5vh;
+                right: 2%;
+                animation: star 12s 8.4s ease-in-out both infinite;
+            }
+            @keyframes star {
+                0% {top:100vh}
+                // 9.5s
+                10% {top:5vh}
+                // 10.7s
+                20% {top:5vh}
+                // 11.9s
+                30% {top:100vh}
+                // 12s
+                100% {top:100vh}
+            }
+        }
+    }
+
+}

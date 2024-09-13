@@ -1,0 +1,29 @@
+// 群組map => 呼叫map-get($變數名稱, 屬性)
+// 色彩規範 => map-get($color, )
+$color: (
+    // 灰階
+    dark: #070707,
+    deep: #1a1a1a,
+    deepgrey: #302f2f,
+    light: #f1f1f1,
+
+    // 主色調
+    primary: #e70112,
+
+    // 輔助
+    secondary1: #b20722,
+    secondary2: #bc00b7,
+    secondary3: #23b2ff,
+
+    // 標記
+    mark: greenyellow,
+);
+
+// 漸層
+// 數列(中間有逗號)就不能加入map裡面，要獨立一個變數
+$gradient-w-a: rgba(255, 255, 255, 0.15), rgba(220, 185, 185, .5);
+$gradient-w8-a8: rgba(255, 255, 255, 0.8), rgba(220, 185, 185, .8);
+
+// 陰影
+$box-shadow-g: 2px 2px 3px map-get($color, dark);
+$box-shadow-mark: 8px 8px 0 map-get($color, mark);
